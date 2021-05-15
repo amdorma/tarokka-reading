@@ -12,4 +12,4 @@ find it on <a href="https://www.dndbeyond.com/marketplace/adventures/curse-of-st
 If I get enough requests, I may add something new, but due to Tarokka Reading being such a quick
 portion of Curse of Strahd, I don't know that anything more than what is here is needed!
 
-:octocat:
+:octocat: Check out the finished project <a href="https://amdorma.github.io/tarokka-reading/">HERE</a>!
