@@ -76,14 +76,13 @@ const tarrokDeck = [
     'https://github.com/amdorma/tarokka-reading/blob/master/public/images/cards/transmuter.png?raw=true',
     'https://github.com/amdorma/tarokka-reading/blob/master/public/images/cards/warrior.png?raw=true',
     'https://github.com/amdorma/tarokka-reading/blob/master/public/images/cards/wizard.png?raw=true',
-
 ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
-const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -5 + Math.random() * 10, delay: i * 100 })
-const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000, zIndex: '0' })
+const to = i => ({ x: 0, y: i * 4, scale: 1, rot: -5 + Math.random() * 10, delay: i * 400 })
+const from = i => ({ x: 1120, rot: 0, scale: 2.5, y: -11000, zIndex: '0' })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
-const trans = (r, s) => `perspective(2000px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+const trans = (r, s) => `perspective(1800px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 /**
  * Returns an array of five random items from the specified array.
@@ -112,7 +111,7 @@ function Deck() {
             const x = isGone ? (20 + window.innerWidth) * xDir : down ? xDelta : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
             const y = isGone ? (20 + window.innerWidth) * yDir : down ? yDelta : 0 // When a card is gone it flys out up or down, otherwise goes back to zero
             const rot = xDelta / 10 + (isGone ? leftOrRight * 20 * velocity : 0) // How much the card tilts, flicking it harder makes it rotate faster
-            const scale = down ? 1.2 : 1 // Active cards lift up a bit (slight enlargement / zoom in)
+            const scale = down ? 1.3 : 1 // Active cards lift up a bit (slight enlargement / zoom in)
             const zIndex = down ? 1 : 0 // Active cards should be on top (have a higher z-index)
             return { x, y, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 }, zIndex }
         })
@@ -135,3 +134,7 @@ function Deck() {
 }
 
 render(<Deck />, document.getElementById('root'))
+
+
+const element = <h1>Tarokka Reading</h1>;
+ReactDOM.render(element, document.getElementById('head'));
