@@ -1,6 +1,6 @@
 # What does this do?
 
-This React app is just a quick little Tarokka Deck Reader that I threw together for a run of Curse of Strahd with some friends
+This React app is just a quick little Tarokka Deck Reader that I put together for some friends that were going to run the D&D campaign, Curse of Strahd.
 
 # Where can I find the meanings for these cards?
 
